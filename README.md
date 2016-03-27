@@ -67,4 +67,5 @@ The following environment-variables are supported.
 
 This can be tested with eglfbdev from mesa-demos-8.2.0
 Example call:
+
 LD_LIBRARY_PATH=/opt/vc/lib EGL_ALPHA=128 EGL_FB_HEIGHT=600 ./eglfbdev
