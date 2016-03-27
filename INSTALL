@@ -1,0 +1,8 @@
+# To install X11EGLRPI, run : 
+sh ./compile.sh
+sudo cp libEGL.so /opt/vc/lib/.
+# To use it as a drop-in replacement for the MESA-Libraries:
+cd /opt/vc/lib
+ln -s libGLESv2.so libGLESv1_CM.so.1
+ln -s libGLESv2.so libGLESv2.so.2
+ln -s libEGL.so libEGL.so.1
