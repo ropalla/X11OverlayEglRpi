@@ -19,23 +19,23 @@ ln -s libGLESv2.so libGLESv2.so.2
 ln -s libEGL.so libEGL.so.1
 exit
 
-# To test it you may use es2gears_x11 from mesa-demos-8.2.0
-# (The demos must NOT have been compiled with rpath, or you
-#   have to replace the original Libs - not recomended!)
+ To test it you may use es2gears_x11 from mesa-demos-8.2.0
+ (The demos must NOT have been compiled with rpath, or you
+   have to replace the original Libs - not recomended!)
 LD_LIBRARY_PATH=/opt/vc/lib ./es2gears_x11
 
-# or in the SDL2 demos (SDL2 should have been complied with --enable-video-opengles2)
+ or in the SDL2 demos (SDL2 should have been complied with --enable-video-opengles2)
 LD_LIBRARY_PATH=/opt/vc/lib SDL_RENDER_DRIVER=opengles2 ./testdraw2
 
 ------------------------------------------
 
-Advantages:
+# Advantages:
 - It is fast 
 - It works with different color-depths
 - You may use it with glshim, so you can
   have fast OpenGL (1.1).
 
-Problems (Any tips to solve this, are welcome):
+# Problems (Any tips to solve this, are welcome):
 - Its an overlay - so it hides the mousepointer
   and overlapping windows.
 - There is a problem to detect window-movements.
@@ -44,7 +44,7 @@ Problems (Any tips to solve this, are welcome):
   are using cool stuff like fvwm ;-), you may see some garbage
   on the other screens.
 
-Extensions for using EGL without X11.
+# Extensions for using EGL without X11.
 The following environment-variables are supported.
 - EGL_DISPMANX - possible values are (auto, yes, no) default is auto
   Tells EGL to manage Dispmanx itself.
@@ -55,6 +55,6 @@ The following environment-variables are supported.
 - EGL_FB_HEIGHT - vertical size of the fbdev overlay (default is the screen-width)
 - EGL_ALPHA - possible values or 0-255 (default is 255)
 
-# This can be tested with eglfbdev from mesa-demos-8.2.0
-# Example call:
+This can be tested with eglfbdev from mesa-demos-8.2.0
+Example call:
 LD_LIBRARY_PATH=/opt/vc/lib EGL_ALPHA=128 EGL_FB_HEIGHT=600 ./eglfbdev
