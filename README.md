@@ -6,25 +6,35 @@ But instead of using Pixmaps, it renders directly into
 the Hardware-Overlay.
 
 # To install it, call:
+
 sh ./compile.sh
+
 sudo cp libEGL.so /opt/vc/lib/.
 
 After installing it, it can be used as a
 drop-in replacement for the
 standared MESA-software-libraries.
+
 sudo su -
+
 cd /opt/vc/lib
+
 ln -s libGLESv2.so libGLESv1_CM.so.1
+
 ln -s libGLESv2.so libGLESv2.so.2
+
 ln -s libEGL.so libEGL.so.1
+
 exit
 
  To test it you may use es2gears_x11 from mesa-demos-8.2.0
  (The demos must NOT have been compiled with rpath, or you
    have to replace the original Libs - not recomended!)
+   
 LD_LIBRARY_PATH=/opt/vc/lib ./es2gears_x11
 
  or in the SDL2 demos (SDL2 should have been complied with --enable-video-opengles2)
+ 
 LD_LIBRARY_PATH=/opt/vc/lib SDL_RENDER_DRIVER=opengles2 ./testdraw2
 
 ------------------------------------------
